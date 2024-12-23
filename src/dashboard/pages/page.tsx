@@ -1,16 +1,9 @@
-import React, { type FC } from 'react';
-import { dashboard } from '@wix/dashboard';
-import {
-  Button,
-  EmptyState,
-  Image,
-  Page,
-  TextButton,
-  WixDesignSystemProvider,
-} from '@wix/design-system';
-import '@wix/design-system/styles.global.css';
-import * as Icons from '@wix/wix-ui-icons-common';
-import wixLogo from './wix_logo.svg';
+import React, { type FC } from "react";
+import { dashboard } from "@wix/dashboard";
+import { Button, Page, WixDesignSystemProvider } from "@wix/design-system";
+import * as Icons from "@wix/wix-ui-icons-common";
+import SitePluginConfig from "../../site/plugins/custom-elements/pickup-box/plugin.json";
+import "@wix/design-system/styles.global.css";
 
 const Index: FC = () => {
   return (
@@ -19,37 +12,18 @@ const Index: FC = () => {
         <Page.Header
           title="Dashboard Page"
           subtitle="Add management capabilities to your app."
-          actionsBar={
-            <Button
-              onClick={() => {
-                dashboard.showToast({
-                  message: 'Your first toast message!',
-                });
-              }}
-              prefixIcon={<Icons.GetStarted />}
-            >
-              Show a toast
-            </Button>
-          }
         />
         <Page.Content>
-          <EmptyState
-            image={
-              <Image fit="contain" height="100px" src={wixLogo} transparent />
-            }
-            title="Start editing this dashboard page"
-            subtitle="Learn how to work with dashboard pages and how to add functionality to them using Wix APIs."
-            theme="page"
+          <Button
+            onClick={() => {
+              dashboard.addSitePlugin(SitePluginConfig.id, {
+                placement: SitePluginConfig.placements[0],
+              });
+            }}
+            prefixIcon={<Icons.GetStarted />}
           >
-            <TextButton
-              as="a"
-              href="https://dev.wix.com/docs/build-apps/develop-your-app/frameworks/wix-cli/supported-extensions/dashboard-extensions/dashboard-pages/add-dashboard-page-extensions-with-the-cli#add-dashboard-page-extensions-with-the-cli"
-              target="_blank"
-              prefixIcon={<Icons.ExternalLink />}
-            >
-              Dashboard pages documentation
-            </TextButton>
-          </EmptyState>
+            Įjungti paštomatų integraciją
+          </Button>
         </Page.Content>
       </Page>
     </WixDesignSystemProvider>
