@@ -1,0 +1,5 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/dashboard-page.json",
+  "id": "e78b07e9-7b8d-48a8-88af-4d36aa992dd3",
+  "title": "Shipping - CLI"
+}

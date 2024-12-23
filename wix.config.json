@@ -1,0 +1,5 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/wix-config.json",
+  "appId": "58360883-d1c3-436e-b0c6-e1a9f77b9fd8",
+  "projectId": "shipping-cli"
+}
